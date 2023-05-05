@@ -1,0 +1,3 @@
+./data/example_predictions.csv
+
+./algorithm/.saved_model/model_example.h5

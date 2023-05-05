@@ -42,12 +42,12 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd TensorFlow-Usage-Example/web-interface
+  cd TensorFlow-Usage-Example/
 ```
 
 Start the server
 
 ```bash
-  php -S localhost:8080
+  chmod +x launch.sh
 ```
 
