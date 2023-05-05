@@ -45,5 +45,4 @@ csv_data['Prix Moyen'] = y_pred
 
 csv_data.to_csv('../data/example_predictions.csv', index=False)
 
-# Sauvegarder le modèle Keras
 model.save('./.saved_model/model_example.h5')

@@ -25,7 +25,6 @@
 				}
 
 				sort($marques);
-				// echo "<option value=0>marque</option>";
 				foreach ($marques as $marque) {
 					echo "<option value=\"$marque\">$marque</option>";
 				}
@@ -47,7 +46,6 @@
 				}
 
 				sort($modeles);
-				// echo "<option value=0>modele</option>";
 				foreach ($modeles as $modele) {
 					echo "<option value=\"$modele\">$modele</option>";
 				}
@@ -69,7 +67,6 @@
 				}
 
 				sort($canons);
-				// echo "<option value=0>canon</option>";
 				foreach ($canons as $canon) {
 					echo "<option value=\"$canon\">$canon</option>";
 				}
@@ -78,18 +75,14 @@
 		<input type="submit" name="Weapon" value="Valider">
 	</form>
 	<?php
-		// Charger les données d'exemple depuis le fichier CSV
 		$donnees = array_map('str_getcsv', file('../data/example_predictions.csv'));
 
-		// Si l'utilisateur a soumis le formulaire
 		if(isset($_POST['Weapon'])){
 			
-			// Récupérer les valeurs choisies par l'utilisateur
 			$modele = $_POST['modele'];
 			$marque = $_POST['marque'];
 			$canon = $_POST['canon'];
 			
-			// Filtrer les données pour ne garder que celles qui correspondent aux valeurs choisies
 			$donnees_filtrees = array();
 			
 			foreach ($donnees as $row) {
@@ -98,7 +91,6 @@
 				}
 			}
 			
-			// Afficher les résultats
 			function fnumber_format($number, $decimals='', $sep1='', $sep2='') {
 
 				if (($number * pow(10 , $decimals + 1) % 10 ) == 5)
@@ -119,7 +111,6 @@
 				echo "<h2>Résultats déterminé avec IA:</h2>";
 				echo "<h3 style=\"padding:0 0 0 20px;\">Prix moyen: </h3><p style=\"padding:0 0 0 40px;\">" . fnumber_format($output, 2, '.', ',') . "€</p>";
 			} else {
-				// Extraire les prix de chaque ligne
 				$prix_actuel = array_column($donnees_filtrees, 3);
 				$prix_moyen = array_column($donnees_filtrees, 4);
 
