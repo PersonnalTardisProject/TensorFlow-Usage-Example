@@ -49,5 +49,6 @@ Start the server
 
 ```bash
   chmod +x launch.sh
+  ./launch.sh
 ```
 
