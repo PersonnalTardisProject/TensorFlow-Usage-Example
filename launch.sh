@@ -1,23 +1,28 @@
 #!/bin/bash
 # Ce script permet de lancer une formation d'un algorithme et de lancer une interface web.
 
-# Afficher le message de début de la formation
-echo "Start training..."
+FILE=./data/example_predictions.csv
+if [ -f "$FILE" ]; then
+    echo "Skip training.."
+else
+    # Afficher le message de début de la formation
+    echo "Start training..."
 
-# Se déplacer dans le répertoire de l'algorithme
-cd ./algorithm
+    # Se déplacer dans le répertoire de l'algorithme
+    cd ./algorithm
 
-# Donner les permissions d'exécution pour le fichier train.py
-chmod +x train.py
+    # Donner les permissions d'exécution pour le fichier train.py
+    chmod +x train.py
 
-# Lancer le fichier train.py
-./train.py
+    # Lancer le fichier train.py
+    ./train.py
 
-# Afficher le message de fin de la formation
-echo "Training finished."
+    # Afficher le message de fin de la formation
+    echo "Training finished."
 
-# Revenir dans le répertoire principal
-cd ..
+    # Revenir dans le répertoire principal
+    cd ..
+fi
 
 # Afficher le message de début de l'interface web
 echo "Start web interface..."
