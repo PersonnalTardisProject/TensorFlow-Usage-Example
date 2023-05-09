@@ -1,92 +1,122 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+:root {
+    --bg-color: #0E141B;
+    --txt-color: #d4c3b2;
+    --txt-color2: #e2d7cb;
+    --txt-color3: #f1ebe5;
+    --txt-color4: #ffffff;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+@font-face {
+    font-family: 'Wotfard';
+    src: url('./font/Wotfard-Regular-webfont/wotfard-regular-webfont.ttf') format('eot'),
+         url('./font/Wotfard-Regular-webfont/wotfard-regular-webfont.ttf') format('woff2');
+}
+
+body {
+    font-family: 'Wotfard', sans-serif;
+    background-color: var(--bg-color);
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+h1, h2, h3, h4, p, label {
+    text-align: center;
+}
+
+p {
+    font-weight: 400;
+    font-size: 0.9vw;
+    color: var(--txt-color4);
+    margin: 10px;
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: 3vw;
+}
+
+.title {
+    text-align: center;
+    background: linear-gradient(to bottom right, #ffffff 10%, #f1ebe5 40%, #e2d7cb 60%, #d4c3b2 80%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-weight: bolder;
+    font-size: 2vw;
+    color: var(--txt-color2);
+    margin: 20px;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 1.75vw;
+    color: var(--txt-color3);
+    margin: 10px;
+}
+
+h4 {
+    font-weight: 1vw;
+    font-size: 1vw;
+    color: var(--txt-color4);
+    margin: 10px;
+}
+
+input, label {
+    font-weight: 500;
+    font-size: 0.9vw;
+    color: var(--txt-color4);
+}
+
+select {
+    font-weight: 500;
+    font-size: 0.9vw;
+    color: var(--bg-color);
+    background-color: var(--txt-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
 }
 
 form {
     display: flex;
-    /* justify-content: space-between; */
-    margin-bottom: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
 }
 
-label {
+.form-opt {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    max-width: fit-content;
     margin-bottom: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    color: #666;
 }
 
-select {
-    display: flex;
-    font-size: 16px;
-    border-radius: 10px;
-    background-color: #f2f2f2;
-    margin-right: 10px;
+.weapon-opt {
+    max-width: fit-content;
+    margin-top: 10px;
     margin-bottom: 10px;
-    cursor: pointer;
 }
 
-input[type] {
-    padding: 10px 20px;
-    font-size: 16px;
+input {
+    flex: 1 0 40px;
+    max-width: fit-content;
+    background-color: #4CAF50;
+    color: var(--txt-color4);
     border: none;
     border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
+    margin: 25px 10px;
 }
 
-input[type="submit"] {
-    background-color: #4CAF50;
-    color: #fff;
-}
-
-input[type="submit"]:hover {
-    background-color: #46a049;
-}
-
-input[type="reset"] {
-    background-color: #f44336;
-    color: #fff;
-}
-
-input[type="reset"]:hover {
-    background-color: #da190b;
-}
-
-.price-summary {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-}
-
-.price-summary h3 {
-    margin-top: 0;
-}
-
-.price-summary ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.price-summary li {
-    margin-bottom: 10px;
-}
-
-.price-summary li span {
-    font-weight: bold;
+.res-txt {
+    font-style: italic;
 }
