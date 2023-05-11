@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 
+# Désactiver les messages de TensorFlow
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+# Log level 0 = all messages are logged (default behavior)
+# Log level 1 = INFO messages are not printed
+# Log level 2 = INFO and WARNING messages are not printed
+# Log level 3 = INFO, WARNING, and ERROR messages are not printed
+
 # Importer les bibliothèques nécessaires
 import pandas as pd
 import numpy as np
